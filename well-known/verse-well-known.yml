@@ -1,0 +1,29 @@
+generated: '2026-07-21'
+method: searched
+source: https://verse.inc/.well-known/
+host: https://verse.inc
+notes: >-
+  verse.inc is served entirely behind a Cloudflare JS challenge (HTTP 403 on the
+  root and all content paths for non-browser clients); only robots.txt and
+  /.well-known/security.txt are reachable. security.txt returns 200 with a valid
+  RFC 9116 body (served with a text/html content-type). The API host
+  api.verse.inc did not expose any /.well-known documents.
+documents:
+  - path: /.well-known/security.txt          # RFC 9116
+    status: 200
+    file: verse-security.txt
+  - path: /.well-known/openid-configuration   # OIDC discovery
+    status: 404
+  - path: /.well-known/oauth-authorization-server  # RFC 8414
+    status: 404
+  - path: /.well-known/api-catalog             # RFC 9727
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/assetlinks.json
+    status: 404
+robots:
+  url: https://verse.inc/robots.txt
+  status: 200
+  content_signals: "search=yes,ai-train=no,use=reference"
+  note: Cloudflare-managed content-signals robots.txt (EU DSM Article 4 reservation).
