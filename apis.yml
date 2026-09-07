@@ -78,6 +78,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Blog
+  url: https://verse.inc/category/guides/
 - type: Website
   url: https://verse.inc/
 - type: SecurityTxt
